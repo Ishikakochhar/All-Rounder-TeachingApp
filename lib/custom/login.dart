@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dob_input_field/dob_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:teachingapp/custom/temp.dart';
 
 class CustomLogin extends StatefulWidget {
   const CustomLogin({super.key});
@@ -87,10 +89,14 @@ class _CustomLoginState extends State<CustomLogin>
                     physics: NeverScrollableScrollPhysics(),
                     controller: _tabController,
                     children: [
-                      Center(
-                          child: Container(
-                        color: Colors.amber,
-                      )),
+                      Column(
+                        children: [
+                          Temp(
+                            ifphone: true,
+                          ),
+                          Dob()
+                        ],
+                      ),
                       Center(child: Icon(Icons.email)),
                     ],
                   ),

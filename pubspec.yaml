@@ -38,6 +38,7 @@ dependencies:
   sizer: ^2.0.15
   velocity_x: ^4.2.1
   slide_to_act: ^2.0.2
+  dob_input_field: ^2.0.0
 
 
 dev_dependencies:

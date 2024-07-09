@@ -92,6 +92,7 @@ class _CustomLoginState extends State<CustomLogin>
                       Column(
                         children: [
                           Temp(
+                            hinttext: 'Phone Number',
                             ifphone: true,
                           ),
                           Dob()

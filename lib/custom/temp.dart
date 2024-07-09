@@ -8,20 +8,26 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/my_flutter_app_icons.dart';
 
-class Temp extends StatelessWidget {
-  String emailcall;
+class Temp extends StatefulWidget {
+  String hinttext;
   bool ifphone;
-  bool ifpassword;
+  final bool ifpassword;
   bool ifname;
   bool ifdob;
   Temp(
-      {this.emailcall = 'Phone Number',
-      this.ifphone = true,
+      {required this.hinttext,
+      this.ifphone = false,
       this.ifpassword = false,
       this.ifname = false,
       this.ifdob = false,
       super.key});
 
+  @override
+  State<Temp> createState() => _TempState();
+}
+
+class _TempState extends State<Temp> {
+  bool passwordVisible = false;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -39,19 +45,31 @@ class Temp extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 0.3.h),
             child: TextFormField(
+              obscureText: widget.ifpassword && !passwordVisible,
               style: TextStyle(fontWeight: FontWeight.bold),
-              keyboardType: ifphone
+              keyboardType: widget.ifphone
                   ? TextInputType.phone
-                  : ifpassword
+                  : widget.ifpassword
                       ? TextInputType.visiblePassword
-                      : ifname
+                      : widget.ifname
                           ? TextInputType.name
                           : TextInputType.emailAddress,
               decoration: InputDecoration(
-                labelText: emailcall,
-                labelStyle: TextStyle(color: Colors.black),
-                border: InputBorder.none,
-              ),
+                  labelText: widget.hinttext,
+                  labelStyle: TextStyle(color: Colors.black),
+                  border: InputBorder.none,
+                  suffixIcon: widget.ifpassword
+                      ? IconButton(
+                          icon: Icon(passwordVisible
+                              ? Icons.visibility
+                              : Icons.visibility_off),
+                          onPressed: () {
+                            setState(() {
+                              passwordVisible = !passwordVisible;
+                            });
+                          },
+                        )
+                      : SizedBox.shrink()),
             ),
           ),
         ),
@@ -80,7 +98,6 @@ class Dob extends StatelessWidget {
           child: DOBInputField(
             firstDate: DateTime(1900),
             lastDate: DateTime.now(),
-            style: TextStyle(fontWeight: FontWeight.bold),
             showLabel: true,
             autovalidateMode: AutovalidateMode.disabled,
             inputDecoration: InputDecoration(

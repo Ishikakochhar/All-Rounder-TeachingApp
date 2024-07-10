@@ -8,7 +8,8 @@ import 'package:teachingapp/reuseable/button.dart';
 import 'package:teachingapp/reuseable/temp.dart';
 
 class CustomLogin extends StatefulWidget {
-  CustomLogin({super.key});
+  String logintype;
+  CustomLogin({required this.logintype, super.key});
 
   @override
   State<CustomLogin> createState() => _CustomLoginState();
@@ -36,7 +37,7 @@ class _CustomLoginState extends State<CustomLogin>
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('Parent Login'),
+        title: Text(widget.logintype),
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -45,8 +46,8 @@ class _CustomLoginState extends State<CustomLogin>
           Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(
-              stops: [0, 0.9],
-              colors: [
+              stops: const [0, 0.9],
+              colors: const [
                 Color.fromRGBO(255, 250, 243, 1),
                 Color.fromRGBO(236, 239, 255, 1)
               ],
@@ -76,7 +77,7 @@ class _CustomLoginState extends State<CustomLogin>
                       indicator: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           color: Color.fromRGBO(42, 183, 199, 1)),
-                      tabs: [
+                      tabs: const [
                         Tab(
                           text: 'Phone Number',
                         ),
@@ -199,7 +200,7 @@ class _CustomLoginState extends State<CustomLogin>
                             SizedBox(
                               height: 7.h,
                             ),
-                            Button(text: 'Login')
+                            GestureDetector(child: Button(text: 'Login'))
                           ],
                         ),
                       ),
@@ -211,6 +212,50 @@ class _CustomLoginState extends State<CustomLogin>
           )
         ],
       ),
+    );
+  }
+}
+
+class TutorLogin extends StatelessWidget {
+  const TutorLogin({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomLogin(
+      logintype: 'Tutor Login',
+    );
+  }
+}
+
+class AdminLogin extends StatelessWidget {
+  const AdminLogin({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomLogin(
+      logintype: 'Admin Login',
+    );
+  }
+}
+
+class ParentLogin extends StatelessWidget {
+  const ParentLogin({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomLogin(
+      logintype: 'Parent Login',
+    );
+  }
+}
+
+class ChildLogin extends StatelessWidget {
+  const ChildLogin({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomLogin(
+      logintype: 'Child Login',
     );
   }
 }

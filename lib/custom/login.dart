@@ -1,12 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:dob_input_field/dob_input_field.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:teachingapp/custom/temp.dart';
+import 'package:teachingapp/reuseable/button.dart';
+import 'package:teachingapp/reuseable/temp.dart';
 
 class CustomLogin extends StatefulWidget {
-  const CustomLogin({super.key});
+  CustomLogin({super.key});
 
   @override
   State<CustomLogin> createState() => _CustomLoginState();
@@ -14,6 +16,7 @@ class CustomLogin extends StatefulWidget {
 
 class _CustomLoginState extends State<CustomLogin>
     with TickerProviderStateMixin {
+  bool switchcust = false;
   late TabController _tabController;
 
   @override
@@ -79,7 +82,7 @@ class _CustomLoginState extends State<CustomLogin>
                         ),
                         Tab(
                           text: 'Email Id',
-                        ),
+                        )
                       ],
                     ),
                   ),
@@ -89,16 +92,117 @@ class _CustomLoginState extends State<CustomLogin>
                     physics: NeverScrollableScrollPhysics(),
                     controller: _tabController,
                     children: [
-                      Column(
-                        children: [
-                          Temp(
-                            hinttext: 'Phone Number',
-                            ifphone: true,
-                          ),
-                          Dob()
-                        ],
+                      Padding(
+                        padding:
+                            EdgeInsets.only(top: 1.h, right: 2.h, left: 2.h),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Temp(
+                              hinttext: 'Phone Number',
+                              ifphone: true,
+                            ),
+                            Temp(
+                              ifpassword: true,
+                              hinttext: 'Password',
+                            ),
+                            SizedBox(
+                              height: 1.h,
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                'Forgot Password?',
+                                style: TextStyle(
+                                    fontSize: 11.sp,
+                                    color: Color.fromRGBO(42, 183, 199, 1),
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 3.h,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Quick Login',
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                CupertinoSwitch(
+                                  value: switchcust,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      switchcust = value;
+                                    });
+                                  },
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 7.h,
+                            ),
+                            Button(text: 'Login')
+                          ],
+                        ),
                       ),
-                      Center(child: Icon(Icons.email)),
+                      Padding(
+                        padding:
+                            EdgeInsets.only(top: 1.h, right: 2.h, left: 2.h),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Temp(
+                              hinttext: 'Email',
+                            ),
+                            Temp(
+                              ifpassword: true,
+                              hinttext: 'Password',
+                            ),
+                            SizedBox(
+                              height: 1.h,
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                'Forgot Password?',
+                                style: TextStyle(
+                                    fontSize: 11.sp,
+                                    color: Color.fromRGBO(42, 183, 199, 1),
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 3.h,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Set Quick Login',
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                CupertinoSwitch(
+                                  value: switchcust,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      switchcust = value;
+                                    });
+                                  },
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 7.h,
+                            ),
+                            Button(text: 'Login')
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),

@@ -32,45 +32,43 @@ class _TempState extends State<Temp> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(top: 70),
-      child: Center(
-        child: Container(
-          height: 7.h,
-          width: screenWidth * 0.9,
-          decoration: BoxDecoration(
-            border: Border.all(color: Color.fromRGBO(226, 226, 226, 1)),
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.white,
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 0.3.h),
-            child: TextFormField(
-              obscureText: widget.ifpassword && !passwordVisible,
-              style: TextStyle(fontWeight: FontWeight.bold),
-              keyboardType: widget.ifphone
-                  ? TextInputType.phone
-                  : widget.ifpassword
-                      ? TextInputType.visiblePassword
-                      : widget.ifname
-                          ? TextInputType.name
-                          : TextInputType.emailAddress,
-              decoration: InputDecoration(
-                  labelText: widget.hinttext,
-                  labelStyle: TextStyle(color: Colors.black),
-                  border: InputBorder.none,
-                  suffixIcon: widget.ifpassword
-                      ? IconButton(
-                          icon: Icon(passwordVisible
-                              ? Icons.visibility
-                              : Icons.visibility_off),
-                          onPressed: () {
-                            setState(() {
-                              passwordVisible = !passwordVisible;
-                            });
-                          },
-                        )
-                      : SizedBox.shrink()),
-            ),
+      padding: EdgeInsets.only(top: 3.h),
+      child: Container(
+        height: 6.5.h,
+        width: screenWidth * 0.9,
+        decoration: BoxDecoration(
+          border: Border.all(color: Color.fromRGBO(226, 226, 226, 1)),
+          borderRadius: BorderRadius.circular(15),
+          color: Colors.white,
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 0.3.h),
+          child: TextFormField(
+            obscureText: widget.ifpassword && !passwordVisible,
+            style: TextStyle(fontWeight: FontWeight.bold),
+            keyboardType: widget.ifphone
+                ? TextInputType.phone
+                : widget.ifpassword
+                    ? TextInputType.visiblePassword
+                    : widget.ifname
+                        ? TextInputType.name
+                        : TextInputType.emailAddress,
+            decoration: InputDecoration(
+                labelText: widget.hinttext,
+                labelStyle: TextStyle(color: Colors.black),
+                border: InputBorder.none,
+                suffixIcon: widget.ifpassword
+                    ? IconButton(
+                        icon: Icon(passwordVisible
+                            ? Icons.visibility
+                            : Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            passwordVisible = !passwordVisible;
+                          });
+                        },
+                      )
+                    : SizedBox.shrink()),
           ),
         ),
       ),

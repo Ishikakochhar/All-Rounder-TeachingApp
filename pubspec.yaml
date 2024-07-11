@@ -39,6 +39,7 @@ dependencies:
   velocity_x: ^4.2.1
   slide_to_act: ^2.0.2
   dob_input_field: ^2.0.0
+  local_auth: ^2.2.0
   country_picker: ^2.0.26
 
 

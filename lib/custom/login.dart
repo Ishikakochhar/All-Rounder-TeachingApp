@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:ffi';
+
 import 'package:dob_input_field/dob_input_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:local_auth/local_auth.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/reuseable/button.dart';
 import 'package:teachingapp/reuseable/temp.dart';
@@ -17,8 +20,24 @@ class CustomLogin extends StatefulWidget {
 
 class _CustomLoginState extends State<CustomLogin>
     with TickerProviderStateMixin {
+  bool isBiometric = false;
   bool switchcust = false;
   late TabController _tabController;
+
+  Future<bool> authenticateWithBiometric() async {
+    final LocalAuthentication localAuthentication = LocalAuthentication();
+    final bool isBiometricSupported =
+        await localAuthentication.isDeviceSupported();
+    final bool canCheckBiometrics =
+        await localAuthentication.canCheckBiometrics;
+    bool isAuthentificated = false;
+    if (isBiometricSupported && canCheckBiometrics) {
+      isAuthentificated = await localAuthentication.authenticate(
+          localizedReason: 'Please Complete Biometrics to Proceed');
+    }
+
+    return isAuthentificated;
+  }
 
   @override
   void initState() {
@@ -192,6 +211,7 @@ class _CustomLoginState extends State<CustomLogin>
                                   onChanged: (value) {
                                     setState(() {
                                       switchcust = value;
+                                      if (switchcust) {}
                                     });
                                   },
                                 )

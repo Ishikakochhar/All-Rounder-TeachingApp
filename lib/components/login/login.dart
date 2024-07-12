@@ -1,16 +1,12 @@
 // ignore_for_file: prefer_const_constructors
-
-import 'dart:ffi';
-
-import 'package:dob_input_field/dob_input_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/components/login/choice.dart';
-import 'package:teachingapp/reuseable/bottombar.dart';
+import 'package:teachingapp/components/profile/profiledetails.dart';
 import 'package:teachingapp/reuseable/button.dart';
-import 'package:teachingapp/reuseable/temp.dart';
+import 'package:teachingapp/reuseable/textfield.dart';
 
 class CustomLogin extends StatefulWidget {
   String logintype;
@@ -56,7 +52,6 @@ class _CustomLoginState extends State<CustomLogin>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Bottombar(),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(widget.logintype),
@@ -122,11 +117,11 @@ class _CustomLoginState extends State<CustomLogin>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Temp(
+                              CustomTextField(
                                 hinttext: 'Phone Number',
                                 ifphone: true,
                               ),
-                              Temp(
+                              CustomTextField(
                                 ifpassword: true,
                                 hinttext: 'Password',
                               ),
@@ -168,7 +163,7 @@ class _CustomLoginState extends State<CustomLogin>
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Choice()));
+                                                      ProfileDetails()));
                                         }
                                       });
                                     },
@@ -190,10 +185,10 @@ class _CustomLoginState extends State<CustomLogin>
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Temp(
+                              CustomTextField(
                                 hinttext: 'Email',
                               ),
-                              Temp(
+                              CustomTextField(
                                 ifpassword: true,
                                 hinttext: 'Password',
                               ),

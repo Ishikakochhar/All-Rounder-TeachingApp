@@ -3,8 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:teachingapp/components/login/choice.dart';
-import 'package:teachingapp/custom/login.dart';
-import 'package:teachingapp/reuseable/bottombar.dart';
+import 'package:teachingapp/components/profile/help.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,10 +17,14 @@ class MyApp extends StatelessWidget {
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return const MaterialApp(
+        return MaterialApp(
+            theme: ThemeData(
+                scaffoldBackgroundColor: Colors.white,
+                appBarTheme: AppBarTheme(color: Colors.transparent)),
             title: 'Flutter Demo',
+            color: Colors.white,
             debugShowCheckedModeBanner: false,
-            home: Choice());
+            home: Help());
       },
     );
   }

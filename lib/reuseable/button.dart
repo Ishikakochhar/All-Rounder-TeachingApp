@@ -11,9 +11,9 @@ class Button extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: Color.fromRGBO(42, 183, 199, 1),
+        color: const Color.fromRGBO(42, 183, 199, 1),
       ),
-      height: 6.5.h,
+      height: 7.h,
       width: screenWidth * 0.9,
       child: Center(
         child: Text(

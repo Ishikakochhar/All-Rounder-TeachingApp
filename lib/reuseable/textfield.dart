@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:ffi';
 import 'dart:math';
 
 import 'package:dob_input_field/dob_input_field.dart';
@@ -8,13 +9,13 @@ import 'package:country_picker/country_picker.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/my_flutter_app_icons.dart';
 
-class Temp extends StatefulWidget {
+class CustomTextField extends StatefulWidget {
   String hinttext;
   bool ifphone;
   final bool ifpassword;
   bool ifname;
   bool ifdob;
-  Temp(
+  CustomTextField(
       {required this.hinttext,
       this.ifphone = false,
       this.ifpassword = false,
@@ -23,10 +24,10 @@ class Temp extends StatefulWidget {
       super.key});
 
   @override
-  State<Temp> createState() => _TempState();
+  State<CustomTextField> createState() => _CustomTextFieldState();
 }
 
-class _TempState extends State<Temp> {
+class _CustomTextFieldState extends State<CustomTextField> {
   bool passwordVisible = false;
   @override
   Widget build(BuildContext context) {
@@ -104,10 +105,10 @@ class Dob extends StatelessWidget {
                 border: InputBorder.none,
                 floatingLabelAlignment: FloatingLabelAlignment.start,
                 counterText: '',
-                floatingLabelStyle: TextStyle(
+                floatingLabelStyle: const TextStyle(
                     color: Color.fromRGBO(117, 117, 117, 1),
                     fontWeight: FontWeight.w400),
-                labelStyle: TextStyle(color: Colors.black)),
+                labelStyle: const TextStyle(color: Colors.black)),
             fieldLabelText: "Date Of Birth",
           ),
         ),

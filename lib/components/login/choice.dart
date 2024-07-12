@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:teachingapp/custom/login.dart';
+import 'package:teachingapp/components/login/login.dart';
 import 'package:teachingapp/reuseable/bottombar.dart';
 
 class Choice extends StatefulWidget {
@@ -83,7 +83,7 @@ class _ChoiceState extends State<Choice> {
                                 color: Color.fromRGBO(42, 183, 199, 1),
                                 fontSize: 18),
                           ),
-                          activeColor: Color.fromRGBO(42, 183, 199, 1),
+                          activeColor: const Color.fromRGBO(42, 183, 199, 1),
                         ),
                         Container(
                           height: 1.5.h,
@@ -119,7 +119,7 @@ class _ChoiceState extends State<Choice> {
                                 color: Color.fromRGBO(42, 183, 199, 1),
                                 fontSize: 18),
                           ),
-                          activeColor: Color.fromRGBO(42, 183, 199, 1),
+                          activeColor: const Color.fromRGBO(42, 183, 199, 1),
                         ),
                         Container(
                           height: 1.5.h,
@@ -155,7 +155,7 @@ class _ChoiceState extends State<Choice> {
                                 color: Color.fromRGBO(42, 183, 199, 1),
                                 fontSize: 18),
                           ),
-                          activeColor: Color.fromRGBO(42, 183, 199, 1),
+                          activeColor: const Color.fromRGBO(42, 183, 199, 1),
                         ),
                         Container(
                           height: 1.5.h,
@@ -191,7 +191,7 @@ class _ChoiceState extends State<Choice> {
                                 color: Color.fromRGBO(42, 183, 199, 1),
                                 fontSize: 18),
                           ),
-                          activeColor: Color.fromRGBO(42, 183, 199, 1),
+                          activeColor: const Color.fromRGBO(42, 183, 199, 1),
                         ),
                       ],
                     ),
@@ -221,6 +221,7 @@ class CustomRadioListTile extends StatelessWidget {
   final Color activeColor;
 
   const CustomRadioListTile({
+    super.key,
     required this.value,
     required this.groupValue,
     required this.onChanged,
@@ -265,6 +266,7 @@ class CustomRadio extends StatelessWidget {
   final Color activeColor;
 
   const CustomRadio({
+    super.key,
     required this.isSelected,
     required this.activeColor,
   });

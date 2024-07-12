@@ -1,25 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/custom/login.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return const MaterialApp(
-          home: Choice(),
-        );
-      },
-    );
-  }
-}
+import 'package:teachingapp/reuseable/bottombar.dart';
 
 class Choice extends StatefulWidget {
   const Choice({super.key});
@@ -52,17 +34,17 @@ class _ChoiceState extends State<Choice> {
             ),
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Padding(
-                padding: EdgeInsets.only(right: 50.w, top: 5.sp),
+                padding: EdgeInsets.only(right: 55.w),
                 child: Image.asset(
                   'assets/images/Logo.png',
                   width: 32.w,
-                  height: 22.h,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 50.w),
+                padding: EdgeInsets.only(right: 50.w, top: 8.h),
                 child: Text(
                   'Login As a',
                   style:
@@ -71,7 +53,7 @@ class _ChoiceState extends State<Choice> {
               ),
               Center(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 10.sp),
+                  padding: EdgeInsets.only(top: 1.h),
                   child: Container(
                     width: 85.w,
                     decoration: const BoxDecoration(
@@ -216,12 +198,12 @@ class _ChoiceState extends State<Choice> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 3.h),
-                child: Image.asset(
-                  'assets/images/youngboy.png',
-                  width: 90.w,
-                ),
+              SizedBox(
+                height: 5.h,
+              ),
+              Image.asset(
+                'assets/images/youngboy.png',
+                width: 90.w,
               )
             ],
           ),
@@ -291,7 +273,7 @@ class CustomRadio extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 22.0,
-      height: 22.0,
+      height: 4.h,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(

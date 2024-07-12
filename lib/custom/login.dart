@@ -7,6 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:sizer/sizer.dart';
+import 'package:teachingapp/components/login/choice.dart';
+import 'package:teachingapp/reuseable/bottombar.dart';
 import 'package:teachingapp/reuseable/button.dart';
 import 'package:teachingapp/reuseable/temp.dart';
 
@@ -54,6 +56,7 @@ class _CustomLoginState extends State<CustomLogin>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Bottombar(),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(widget.logintype),
@@ -112,116 +115,139 @@ class _CustomLoginState extends State<CustomLogin>
                     physics: NeverScrollableScrollPhysics(),
                     controller: _tabController,
                     children: [
-                      Padding(
-                        padding:
-                            EdgeInsets.only(top: 1.h, right: 2.h, left: 2.h),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Temp(
-                              hinttext: 'Phone Number',
-                              ifphone: true,
-                            ),
-                            Temp(
-                              ifpassword: true,
-                              hinttext: 'Password',
-                            ),
-                            SizedBox(
-                              height: 1.h,
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                'Forgot Password?',
-                                style: TextStyle(
-                                    fontSize: 11.sp,
-                                    color: Color.fromRGBO(42, 183, 199, 1),
-                                    fontWeight: FontWeight.w600),
+                      SingleChildScrollView(
+                        child: Padding(
+                          padding:
+                              EdgeInsets.only(top: 1.h, right: 2.h, left: 2.h),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Temp(
+                                hinttext: 'Phone Number',
+                                ifphone: true,
                               ),
-                            ),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Quick Login',
+                              Temp(
+                                ifpassword: true,
+                                hinttext: 'Password',
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                  'Forgot Password?',
                                   style: TextStyle(
-                                      fontSize: 14.sp,
+                                      fontSize: 11.sp,
+                                      color: Color.fromRGBO(42, 183, 199, 1),
                                       fontWeight: FontWeight.w600),
                                 ),
-                                CupertinoSwitch(
-                                  value: switchcust,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      switchcust = value;
-                                    });
-                                  },
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 7.h,
-                            ),
-                            Button(text: 'Login')
-                          ],
+                              ),
+                              SizedBox(
+                                height: 3.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Quick Login',
+                                    style: TextStyle(
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  CupertinoSwitch(
+                                    value: switchcust,
+                                    onChanged: (value) async {
+                                      isBiometric =
+                                          await authenticateWithBiometric();
+                                      setState(() {
+                                        switchcust = value;
+                                        if (switchcust) {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Choice()));
+                                        }
+                                      });
+                                    },
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 7.h,
+                              ),
+                              Button(text: 'Login')
+                            ],
+                          ),
                         ),
                       ),
-                      Padding(
-                        padding:
-                            EdgeInsets.only(top: 1.h, right: 2.h, left: 2.h),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Temp(
-                              hinttext: 'Email',
-                            ),
-                            Temp(
-                              ifpassword: true,
-                              hinttext: 'Password',
-                            ),
-                            SizedBox(
-                              height: 1.h,
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Text(
-                                'Forgot Password?',
-                                style: TextStyle(
-                                    fontSize: 11.sp,
-                                    color: Color.fromRGBO(42, 183, 199, 1),
-                                    fontWeight: FontWeight.w600),
+                      SingleChildScrollView(
+                        child: Padding(
+                          padding:
+                              EdgeInsets.only(top: 1.h, right: 2.h, left: 2.h),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Temp(
+                                hinttext: 'Email',
                               ),
-                            ),
-                            SizedBox(
-                              height: 3.h,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Set Quick Login',
+                              Temp(
+                                ifpassword: true,
+                                hinttext: 'Password',
+                              ),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                  'Forgot Password?',
                                   style: TextStyle(
-                                      fontSize: 14.sp,
+                                      fontSize: 11.sp,
+                                      color: Color.fromRGBO(42, 183, 199, 1),
                                       fontWeight: FontWeight.w600),
                                 ),
-                                CupertinoSwitch(
-                                  value: switchcust,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      switchcust = value;
-                                      if (switchcust) {}
-                                    });
-                                  },
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 7.h,
-                            ),
-                            GestureDetector(child: Button(text: 'Login'))
-                          ],
+                              ),
+                              SizedBox(
+                                height: 3.h,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Set Quick Login',
+                                    style: TextStyle(
+                                        fontSize: 14.sp,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  CupertinoSwitch(
+                                    value: switchcust,
+                                    onChanged: (value) async {
+                                      isBiometric =
+                                          await authenticateWithBiometric();
+                                      setState(() {
+                                        switchcust = value;
+                                        if (switchcust) {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Choice()));
+                                        }
+                                      });
+                                    },
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 7.h,
+                              ),
+                              GestureDetector(child: Button(text: 'Login'))
+                            ],
+                          ),
                         ),
                       ),
                     ],

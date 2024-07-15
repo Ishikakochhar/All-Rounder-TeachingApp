@@ -4,6 +4,7 @@ import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:teachingapp/components/login/choice.dart';
 import 'package:teachingapp/components/profile/help.dart';
+import 'package:teachingapp/components/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             color: Colors.white,
             debugShowCheckedModeBanner: false,
-            home: Help());
+            home: Splash());
       },
     );
   }

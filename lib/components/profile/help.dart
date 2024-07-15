@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/reuseable/textfield.dart';
 
@@ -11,29 +10,34 @@ class Help extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Help'),
+        title: const Text('Help'),
       ),
       body: Center(
         child: Column(
           children: [
             CustomTextField(hinttext: 'Email'),
-            Container(
-              height: 15.h,
-              width: screenWidth * 0.9,
-              decoration: BoxDecoration(
-                border: Border.all(color: Color.fromRGBO(226, 226, 226, 1)),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: TextFormField(
-                maxLength: 90,
-                maxLengthEnforcement: MaxLengthEnforcement.none,
-                maxLines: 2,
-                decoration: InputDecoration(
-                  labelText: 'Query',
-                  labelStyle: TextStyle(color: Colors.black),
-                  border: InputBorder.none,
-                ),
-              ),
+            Padding(
+              padding: EdgeInsets.only(top: 3.h),
+              child: Container(
+                  height: 15.h,
+                  width: screenWidth * 0.9,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                        color: const Color.fromRGBO(226, 226, 226, 1)),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.3.h),
+                    child: TextFormField(
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      decoration: const InputDecoration(
+                        labelText: 'Query',
+                        labelStyle: TextStyle(color: Colors.black),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  )),
             )
           ],
         ),

@@ -5,14 +5,14 @@
 /// To use this font, place it in your fonts/ directory and include the
 /// following in your pubspec.yaml
 ///
-/// flutter:
-///   fonts:
-///    - family:  MyFlutterApp
-///      fonts:
-///       - asset: fonts/MyFlutterApp.ttf
-///
-/// 
-///
+//  flutter:
+//    fonts:
+//     - family:  MyFlutterApp
+//       fonts:
+//        - asset: fonts/MyFlutterApp.ttf
+// /
+// / 
+// ///
 import 'package:flutter/widgets.dart';
 
 class MyFlutterApp {

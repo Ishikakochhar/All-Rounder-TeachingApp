@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:sizer/sizer.dart';
+import 'package:teachingapp/components/homepage.dart';
 import 'package:teachingapp/components/login/choice.dart';
 import 'package:teachingapp/components/profile/profiledetails.dart';
 import 'package:teachingapp/reuseable/button.dart';
@@ -163,7 +164,7 @@ class _CustomLoginState extends State<CustomLogin>
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      ProfileDetails()));
+                                                      Homepage()));
                                         }
                                       });
                                     },
@@ -230,7 +231,7 @@ class _CustomLoginState extends State<CustomLogin>
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Choice()));
+                                                      Homepage()));
                                         }
                                       });
                                     },

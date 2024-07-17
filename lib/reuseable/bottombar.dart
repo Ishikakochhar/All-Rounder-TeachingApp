@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:teachingapp/components/common/profile/profile.dart';
+import 'package:teachingapp/components/homepage.dart';
 
 class Bottombar extends StatelessWidget {
   const Bottombar({super.key});
@@ -6,9 +8,9 @@ class Bottombar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: [
+      items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home_filled),
+          icon: Icon(Icons.home),
           label: 'Home',
         ),
         BottomNavigationBarItem(
@@ -20,6 +22,26 @@ class Bottombar extends StatelessWidget {
           label: 'Profile',
         ),
       ],
+      onTap: (index) {
+        switch (index) {
+          case 0:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Homepage()),
+            );
+            break;
+          case 1:
+            break;
+          case 2:
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Profile()),
+            );
+            break;
+          default:
+            break;
+        }
+      },
     );
   }
 }

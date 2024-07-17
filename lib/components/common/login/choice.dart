@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/components/homepage.dart';
-import 'package:teachingapp/components/login/login.dart';
+import 'package:teachingapp/components/common/login/login.dart';
 import 'package:teachingapp/reuseable/bottombar.dart';
 
 class Choice extends StatefulWidget {
-  const Choice({super.key, required Homepage redirectPageName, required String firstName});
+  const Choice(
+      {super.key,
+      required Homepage redirectPageName,
+      required String firstName});
 
   @override
   State<Choice> createState() => _ChoiceState();

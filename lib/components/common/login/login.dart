@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/components/homepage.dart';
-import 'package:teachingapp/components/login/choice.dart';
-import 'package:teachingapp/components/profile/profiledetails.dart';
 import 'package:teachingapp/reuseable/button.dart';
 import 'package:teachingapp/reuseable/textfield.dart';
 

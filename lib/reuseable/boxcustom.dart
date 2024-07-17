@@ -118,68 +118,71 @@ class CustomBoxDecoration1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Center(
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => pageroute));
-            },
-            child: Container(
-              width: 85.w,
-              height: 8.h,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color.fromRGBO(255, 250, 243, 1),
-                    Color.fromRGBO(236, 239, 255, 1),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 1.h, left: 10.sp),
-                        child: Text(
-                          title,
-                          style: TextStyle(
-                              fontSize: 12.sp, fontWeight: FontWeight.w600),
-                        ),
-                      ),
+    return Padding(
+      padding: EdgeInsets.only(top: 2.h),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => pageroute));
+              },
+              child: Container(
+                width: 85.w,
+                height: 8.h,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromRGBO(255, 250, 243, 1),
+                      Color.fromRGBO(236, 239, 255, 1),
                     ],
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 10.sp, right: 2.sp),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          description,
-                          style: TextStyle(
-                              color: Color.fromRGBO(42, 183, 199, 1),
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w400),
+                        Padding(
+                          padding: EdgeInsets.only(top: 1.h, left: 10.sp),
+                          child: Text(
+                            title,
+                            style: TextStyle(
+                                fontSize: 12.sp, fontWeight: FontWeight.w600),
+                          ),
                         ),
-                        Icon(Icons.arrow_forward_ios_sharp)
                       ],
                     ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(right: 140.sp, bottom: 4.sp, top: 6.sp),
-                  ),
-                ],
+                    Padding(
+                      padding: EdgeInsets.only(left: 10.sp, right: 2.sp),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            description,
+                            style: TextStyle(
+                                color: Color.fromRGBO(42, 183, 199, 1),
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Icon(Icons.arrow_forward_ios_sharp)
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          right: 140.sp, bottom: 4.sp, top: 6.sp),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

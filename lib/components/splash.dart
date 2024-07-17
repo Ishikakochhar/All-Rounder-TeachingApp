@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:teachingapp/components/homepage.dart';
-import 'package:teachingapp/components/login/choice.dart';
+import 'package:teachingapp/components/common/login/choice.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

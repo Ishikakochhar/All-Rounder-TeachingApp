@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:teachingapp/reuseable/button.dart';
 import 'package:teachingapp/reuseable/textfield.dart';
 
 class Help extends StatelessWidget {
@@ -17,9 +18,9 @@ class Help extends StatelessWidget {
           children: [
             CustomTextField(hinttext: 'Email'),
             Padding(
-              padding: EdgeInsets.only(top: 3.h),
+              padding: EdgeInsets.only(top: 2.h, bottom: 6.h),
               child: Container(
-                  height: 15.h,
+                  height: 10.h,
                   width: screenWidth * 0.9,
                   decoration: BoxDecoration(
                     border: Border.all(
@@ -30,6 +31,8 @@ class Help extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.3.h),
                     child: TextFormField(
+                      keyboardType: TextInputType.text,
+                      maxLines: null,
                       style: const TextStyle(fontWeight: FontWeight.bold),
                       decoration: const InputDecoration(
                         labelText: 'Query',
@@ -38,7 +41,8 @@ class Help extends StatelessWidget {
                       ),
                     ),
                   )),
-            )
+            ),
+            Button(text: 'Submit')
           ],
         ),
       ),

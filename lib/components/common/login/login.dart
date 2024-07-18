@@ -172,7 +172,10 @@ class _CustomLoginState extends State<CustomLogin>
                               SizedBox(
                                 height: 7.h,
                               ),
-                              Button(text: 'Login')
+                              Button(
+                                text: 'Login',
+                                onPressed: () {},
+                              )
                             ],
                           ),
                         ),
@@ -239,7 +242,11 @@ class _CustomLoginState extends State<CustomLogin>
                               SizedBox(
                                 height: 7.h,
                               ),
-                              GestureDetector(child: Button(text: 'Login'))
+                              GestureDetector(
+                                  child: Button(
+                                text: 'Login',
+                                onPressed: () {},
+                              ))
                             ],
                           ),
                         ),

@@ -10,7 +10,10 @@ class Bottombar extends StatelessWidget {
     return BottomNavigationBar(
       items: const [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(
+            Icons.home_sharp,
+            color: Colors.grey,
+          ),
           label: 'Home',
         ),
         BottomNavigationBarItem(

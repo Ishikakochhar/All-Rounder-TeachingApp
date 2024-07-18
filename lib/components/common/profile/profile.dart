@@ -3,6 +3,7 @@ import 'package:sizer/sizer.dart';
 import 'package:teachingapp/components/homepage.dart';
 import 'package:teachingapp/components/common/profile/help.dart';
 import 'package:teachingapp/components/common/profile/profiledetails.dart';
+import 'package:teachingapp/components/tutor/kids.dart';
 import 'package:teachingapp/reuseable/bottombar.dart';
 import 'package:teachingapp/reuseable/boxcustom.dart';
 
@@ -35,7 +36,7 @@ class _ProfileState extends State<Profile> {
               CustomBoxDecoration1(
                 title: 'Kids',
                 description: 'view all kids',
-                pageroute: const Profile(),
+                pageroute: const Kids(),
               ),
               CustomBoxDecoration1(
                 title: 'History',

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -107,13 +109,17 @@ class CustomBoxDecoration extends StatelessWidget {
 class CustomBoxDecoration1 extends StatelessWidget {
   final String title;
   final String description;
-  Widget pageroute;
+  bool dialog;
+  Widget? pageroute;
+  Widget? dialogbox;
 
   CustomBoxDecoration1(
       {Key? key,
       required this.title,
+      this.dialog = false,
+      this.dialogbox,
       required this.description,
-      required this.pageroute})
+      this.pageroute})
       : super(key: key);
 
   @override
@@ -126,8 +132,15 @@ class CustomBoxDecoration1 extends StatelessWidget {
           Center(
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => pageroute));
+                if (dialog) {
+                  showDialog(
+                      context: context,
+                      builder: (context) => dialogbox ?? Container());
+                } else
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => pageroute ?? Container()));
               },
               child: Container(
                 width: 85.w,

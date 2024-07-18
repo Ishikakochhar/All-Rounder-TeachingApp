@@ -1,11 +1,15 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class Button extends StatelessWidget {
-  String text;
-  Button({required this.text, super.key});
+  final String text;
+  final VoidCallback onPressed;
+
+  const Button({
+    required this.text,
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,17 +17,20 @@ class Button extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        color: const Color.fromRGBO(42, 183, 199, 1),
+        color: Color.fromRGBO(42, 183, 199, 1),
       ),
-      height: 7.h,
+      height: 6.5.h,
       width: screenWidth * 0.9,
-      child: Center(
+      child: TextButton(
+        onPressed: onPressed,
         child: Text(
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w600),
-            text),
+          text,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 13.sp,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
       ),
     );
   }

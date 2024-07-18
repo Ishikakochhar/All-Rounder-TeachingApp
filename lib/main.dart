@@ -35,16 +35,7 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             color: Colors.white,
             debugShowCheckedModeBanner: false,
-            home: AlertBox(
-              title: 'Delete',
-              icon: CupertinoIcons.delete_simple,
-              onConfirm: () {
-                print('Hola');
-              },
-              onCancel: () {
-                print('yoohoo');
-              },
-            ));
+            home: Profile());
       },
     );
   }

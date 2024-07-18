@@ -42,7 +42,10 @@ class Help extends StatelessWidget {
                     ),
                   )),
             ),
-            Button(text: 'Submit')
+            Button(
+              text: 'Submit',
+              onPressed: () {},
+            )
           ],
         ),
       ),

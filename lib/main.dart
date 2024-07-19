@@ -7,9 +7,11 @@ import 'package:teachingapp/components/child/childprofile.dart';
 import 'package:teachingapp/components/common/login/choice.dart';
 import 'package:teachingapp/components/common/profile/help.dart';
 import 'package:teachingapp/components/common/profile/profile.dart';
+import 'package:teachingapp/components/common/task/taskhistory.dart';
 import 'package:teachingapp/components/homepage.dart';
 import 'package:teachingapp/components/splash.dart';
 import 'package:teachingapp/reuseable/alertbox.dart';
+import 'package:teachingapp/reuseable/datepicker.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             color: Colors.white,
             debugShowCheckedModeBanner: false,
-            home: Profile());
+            home: Taskhistory());
       },
     );
   }

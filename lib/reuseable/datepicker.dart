@@ -14,8 +14,8 @@ class Datepicker extends StatelessWidget {
       headerProps:
           const EasyHeaderProps(monthPickerType: MonthPickerType.dropDown),
       dayProps: EasyDayProps(
-        height: 10.h,
-        width: 19.w,
+        height: 9.h,
+        width: 18.w,
         dayStructure: DayStructure.dayStrDayNum,
         inactiveDayStyle: DayStyle(
           decoration: BoxDecoration(

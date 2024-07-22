@@ -22,7 +22,7 @@ class CustomBoxDecoration extends StatelessWidget {
       children: [
         Center(
           child: Container(
-            width: 85.w,
+            width: 88.w,
             height: 21.h,
             decoration: BoxDecoration(
               gradient: LinearGradient(

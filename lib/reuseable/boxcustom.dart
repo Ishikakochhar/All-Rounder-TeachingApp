@@ -22,7 +22,7 @@ class CustomBoxDecoration extends StatelessWidget {
       children: [
         Center(
           child: Container(
-            width: 88.w,
+            width: 85.w,
             height: 21.h,
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -34,27 +34,31 @@ class CustomBoxDecoration extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: 3.h),
-                      child: Image.asset(
-                        'assets/images/Rectangle 351 (1).png',
-                        height: 25.sp,
-                        alignment: Alignment.topLeft,
+                Padding(
+                  padding: EdgeInsets.only(top: 1.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(),
+                        child: Image.asset(
+                          'assets/images/Rectangle 351 (1).png',
+                          height: 20.sp,
+                          alignment: Alignment.topLeft,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 2.5.h, left: 10.sp),
-                      child: Text(
-                        title,
-                        style: TextStyle(
-                            fontSize: 14.sp, fontWeight: FontWeight.w600),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10.sp),
+                        child: Text(
+                          title,
+                          style: TextStyle(
+                              fontSize: 13.sp, fontWeight: FontWeight.w600),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 10.sp, right: 1.sp),
@@ -67,8 +71,9 @@ class CustomBoxDecoration extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding:
-                      EdgeInsets.only(right: 140.sp, bottom: 4.sp, top: 6.sp),
+                  padding: EdgeInsets.only(
+                    right: 140.sp,
+                  ),
                   child: Text(
                     'Submission date',
                     style: TextStyle(
@@ -92,7 +97,7 @@ class CustomBoxDecoration extends StatelessWidget {
                       date,
                       style: TextStyle(
                           color: Color.fromRGBO(2, 183, 199, 1),
-                          fontSize: 12.sp,
+                          fontSize: 10.sp,
                           fontWeight: FontWeight.w500),
                     ),
                   ],

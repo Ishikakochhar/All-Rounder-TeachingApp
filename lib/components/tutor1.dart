@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/components/child/activitysubmit.dart';
+import 'package:teachingapp/reuseable/bottombar.dart';
 import 'package:teachingapp/reuseable/boxcustom.dart';
 // Import the new detail page
 

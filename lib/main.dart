@@ -13,6 +13,7 @@ import 'package:teachingapp/components/homepage.dart';
 import 'package:teachingapp/components/splash.dart';
 import 'package:teachingapp/components/tutor1.dart';
 import 'package:teachingapp/reuseable/alertbox.dart';
+import 'package:teachingapp/reuseable/bottombar.dart';
 import 'package:teachingapp/reuseable/datepicker.dart';
 
 void main() {
@@ -39,7 +40,9 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             color: Colors.white,
             debugShowCheckedModeBanner: false,
-            home: Tutor1());
+            home: BottomNavBarWithPageView(
+              index: 0,
+            ));
       },
     );
   }

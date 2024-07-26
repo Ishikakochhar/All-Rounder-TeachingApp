@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/components/homepage.dart';
+import 'package:teachingapp/reuseable/bottombar.dart';
 import 'package:teachingapp/reuseable/button.dart';
 import 'package:teachingapp/reuseable/textfield.dart';
 
@@ -162,7 +163,7 @@ class _CustomLoginState extends State<CustomLogin>
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Homepage()));
+                                                      BottomNavBarWithPageView()));
                                         }
                                       });
                                     },

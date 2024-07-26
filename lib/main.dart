@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             color: Colors.white,
             debugShowCheckedModeBanner: false,
-            home: BottomNavBarWithPageView());
+            home: Splash());
       },
     );
   }

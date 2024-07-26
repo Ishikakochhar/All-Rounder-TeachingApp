@@ -17,7 +17,6 @@ class CategoryData with ChangeNotifier {
     Category(id: 'CA', title: 'Cognitive Activity'),
     Category(id: 'EA', title: 'Emotional Activity'),
     Category(id: 'SA', title: 'Social Activity'),
-    Category(id: 'AA', title: 'Academic Activity'),
   ];
 
   List<Category> get items {

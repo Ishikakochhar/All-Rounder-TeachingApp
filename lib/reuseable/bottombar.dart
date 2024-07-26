@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:teachingapp/components/common/profile/profile.dart';
+import 'package:teachingapp/components/common/task/taskprogress.dart';
 import 'package:teachingapp/components/homepage.dart';
 
 class BottomNavBarWithPageView extends StatefulWidget {
@@ -42,8 +43,7 @@ class _BottomNavBarWithPageViewState extends State<BottomNavBarWithPageView> {
 
   List pages = [
     Homepage(),
-    // Replace this with your Progress page
-    Center(child: Text('Progress Page')),
+    Taskprogress(),
     Profile(),
   ];
   @override
@@ -51,6 +51,7 @@ class _BottomNavBarWithPageViewState extends State<BottomNavBarWithPageView> {
     return Scaffold(
       body: pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: const Color.fromRGBO(57, 204, 221, 1),
         currentIndex: _currentIndex,
         onTap: _onItemTapped,
         items: const [

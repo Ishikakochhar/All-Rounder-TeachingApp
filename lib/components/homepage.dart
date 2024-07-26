@@ -37,17 +37,6 @@ class Homepage extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
-            IconButton(
-              icon: Image.asset(
-                'assets/images/Layer 2.png',
-                width: 8.w,
-                height: 7.h,
-              ),
-              onPressed: () {
-                // Add action for the right icon here
-              },
-            ),
           ],
         ),
       ),

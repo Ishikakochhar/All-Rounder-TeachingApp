@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:teachingapp/components/tutor1.dart';
+import 'package:teachingapp/reuseable/boxcustom.dart';
 import 'package:teachingapp/reuseable/datepicker.dart';
 
 class Taskhistory extends StatefulWidget {
@@ -16,6 +18,27 @@ class _TaskhistoryState extends State<Taskhistory> {
     'Cognitive Activity',
     'Emotional Activity',
   ];
+  List<Map<String, String>> activities = [
+    {
+      'title': 'Balance Beam',
+      'description':
+          'Try more lines at different angles, spirals, and zig-zags.',
+      'date': 'July 16, 2022',
+    },
+    {
+      'title': 'Dancing!',
+      'description':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
+      'date': 'July 16, 2022',
+    },
+    {
+      'title': 'Headstands',
+      'description':
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
+      'date': 'July 16, 2022',
+    },
+  ];
+
   Set<String> _selectedFilters = Set<String>();
 
   var _isselected = false;
@@ -58,6 +81,21 @@ class _TaskhistoryState extends State<Taskhistory> {
                   ),
                 );
               }).toList(),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: activities.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(vertical: 1.h),
+                  child: CustomBoxDecoration(
+                    title: activities[index]['title'] ?? '',
+                    description: activities[index]['description'] ?? '',
+                    date: activities[index]['date'] ?? '',
+                  ),
+                );
+              },
             ),
           ),
         ],

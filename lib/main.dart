@@ -12,6 +12,7 @@ import 'package:teachingapp/components/common/profile/profile.dart';
 import 'package:teachingapp/components/common/task/taskhistory.dart';
 import 'package:teachingapp/components/common/task/taskprogress.dart';
 import 'package:teachingapp/components/homepage.dart';
+import 'package:teachingapp/components/parents/registeredkids.dart';
 import 'package:teachingapp/components/splash.dart';
 import 'package:teachingapp/components/tutor1.dart';
 import 'package:teachingapp/reuseable/alertbox.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             color: Colors.white,
             debugShowCheckedModeBanner: false,
-            home: BottomNavBarAdmin());
+            home: Splash());
       },
     );
   }

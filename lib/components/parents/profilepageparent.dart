@@ -1,22 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:teachingapp/components/child/childprofile.dart';
 import 'package:teachingapp/components/common/login/choice.dart';
 import 'package:teachingapp/components/homepage.dart';
 import 'package:teachingapp/components/common/profile/help.dart';
 import 'package:teachingapp/components/common/profile/profiledetails.dart';
+import 'package:teachingapp/components/parents/registeredkids.dart';
 import 'package:teachingapp/components/tutor/kids.dart';
 import 'package:teachingapp/reuseable/alertbox.dart';
 import 'package:teachingapp/reuseable/boxcustom.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class ProfileParents extends StatefulWidget {
+  const ProfileParents({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<ProfileParents> createState() => _ProfileParentsState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfileParentsState extends State<ProfileParents> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,9 +38,9 @@ class _ProfileState extends State<Profile> {
               pageroute: ProfileDetails(),
             ),
             CustomBoxDecoration1(
-              title: 'Kids',
-              description: 'view all kids',
-              pageroute: const Kids(),
+              title: 'Kids Profile',
+              description: 'Kids Details',
+              pageroute: Registeredkids(),
             ),
             CustomBoxDecoration1(
               title: 'History',

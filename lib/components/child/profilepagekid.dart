@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:teachingapp/components/child/childprofile.dart';
 import 'package:teachingapp/components/common/login/choice.dart';
 import 'package:teachingapp/components/homepage.dart';
 import 'package:teachingapp/components/common/profile/help.dart';
@@ -9,14 +10,14 @@ import 'package:teachingapp/components/tutor/kids.dart';
 import 'package:teachingapp/reuseable/alertbox.dart';
 import 'package:teachingapp/reuseable/boxcustom.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class ProfilePageKid extends StatefulWidget {
+  const ProfilePageKid({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<ProfilePageKid> createState() => _ProfilePageKidState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfilePageKidState extends State<ProfilePageKid> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,12 +34,7 @@ class _ProfileState extends State<Profile> {
             CustomBoxDecoration1(
               title: 'My Profile',
               description: 'View Personal Details',
-              pageroute: ProfileDetails(),
-            ),
-            CustomBoxDecoration1(
-              title: 'Kids',
-              description: 'view all kids',
-              pageroute: const Kids(),
+              pageroute: Childprofile(),
             ),
             CustomBoxDecoration1(
               title: 'History',

@@ -12,8 +12,8 @@ class Childprofile extends StatelessWidget {
   String parentemail;
   String parentphone;
   Childprofile({
-    this.childname = 'Kenny Amy',
-    this.parentemail = 'Ken@gmail.com',
+    this.childname = 'Kids Name',
+    this.parentemail = 'Kid@gmail.com',
     this.parentname = 'Jane Cooper',
     this.parentphone = '+91 1234567809',
     this.childdob = 'DD/MM/YY',

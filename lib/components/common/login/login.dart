@@ -1,16 +1,21 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:sizer/sizer.dart';
 import 'package:teachingapp/components/homepage.dart';
+import 'package:teachingapp/reuseable/bottomappbaradmin.dart';
 import 'package:teachingapp/reuseable/bottombar.dart';
+import 'package:teachingapp/reuseable/bottomnavbarparents.dart';
+import 'package:teachingapp/reuseable/bottomnavkid.dart';
 import 'package:teachingapp/reuseable/button.dart';
 import 'package:teachingapp/reuseable/textfield.dart';
 
 class CustomLogin extends StatefulWidget {
   String logintype;
-  CustomLogin({required this.logintype, super.key});
+  Widget call;
+  CustomLogin({required this.call, required this.logintype, super.key});
 
   @override
   State<CustomLogin> createState() => _CustomLoginState();
@@ -162,8 +167,8 @@ class _CustomLoginState extends State<CustomLogin>
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      BottomNavBarWithPageView()));
+                                                  builder: (context) => widget.call
+                                                     ));
                                         }
                                       });
                                     },
@@ -175,7 +180,9 @@ class _CustomLoginState extends State<CustomLogin>
                               ),
                               Button(
                                 text: 'Login',
-                                onPressed: () {},
+                                onPressed: () {
+                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>widget.call));
+                                },
                               )
                             ],
                           ),
@@ -233,7 +240,7 @@ class _CustomLoginState extends State<CustomLogin>
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      Homepage()));
+                                                      widget.call));
                                         }
                                       });
                                     },
@@ -246,7 +253,7 @@ class _CustomLoginState extends State<CustomLogin>
                               GestureDetector(
                                   child: Button(
                                 text: 'Login',
-                                onPressed: () {},
+                                onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> widget.call));},
                               ))
                             ],
                           ),
@@ -269,7 +276,7 @@ class TutorLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomLogin(
+    return CustomLogin(call: BottomNavBarWithPageView(),
       logintype: 'Tutor Login',
     );
   }
@@ -280,7 +287,7 @@ class AdminLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomLogin(
+    return CustomLogin(call: BottomNavBarAdmin(),
       logintype: 'Admin Login',
     );
   }
@@ -291,7 +298,7 @@ class ParentLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomLogin(
+    return CustomLogin(call: BottomNavBarParents(),
       logintype: 'Parent Login',
     );
   }
@@ -302,7 +309,7 @@ class ChildLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomLogin(
+    return CustomLogin(call: BottomNavBarKids(),
       logintype: 'Child Login',
     );
   }

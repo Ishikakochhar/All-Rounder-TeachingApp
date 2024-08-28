@@ -21,7 +21,7 @@ class _ChoiceState extends State<Choice> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
+      appBar: AppBar(leading: const Icon(null),
         backgroundColor: Colors.transparent,
       ),
       body: Stack(

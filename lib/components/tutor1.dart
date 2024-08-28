@@ -6,7 +6,8 @@ import 'package:teachingapp/reuseable/boxcustom.dart';
 // Import the new detail page
 
 class Tutor1 extends StatefulWidget {
-  const Tutor1({super.key});
+  String title;
+  Tutor1({required this.title,super.key});
 
   @override
   State<Tutor1> createState() => _Tutor1State();
@@ -17,19 +18,19 @@ class _Tutor1State extends State<Tutor1> {
     {
       'title': 'Balance Beam',
       'description':
-          'Try more lines at different angles, spirals, and zig-zags.',
+      'Try more lines at different angles, spirals, and zig-zags.',
       'date': 'July 16, 2022',
     },
     {
       'title': 'Dancing!',
       'description':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
       'date': 'July 16, 2022',
     },
     {
       'title': 'Headstands',
       'description':
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.',
       'date': 'July 16, 2022',
     },
   ];
@@ -38,7 +39,7 @@ class _Tutor1State extends State<Tutor1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Physical Activity'),
+        title:  Text(widget.title),
       ),
       body: ListView.builder(
         itemCount: activities.length,

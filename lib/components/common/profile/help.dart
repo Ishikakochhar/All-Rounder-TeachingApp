@@ -17,31 +17,8 @@ class Help extends StatelessWidget {
         child: Column(
           children: [
             CustomTextField(hinttext: 'Email'),
-            Padding(
-              padding: EdgeInsets.only(top: 2.h, bottom: 6.h),
-              child: Container(
-                  height: 10.h,
-                  width: screenWidth * 0.9,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        color: const Color.fromRGBO(226, 226, 226, 1)),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.3.h),
-                    child: TextFormField(
-                      keyboardType: TextInputType.text,
-                      maxLines: null,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                      decoration: const InputDecoration(
-                        labelText: 'Query',
-                        labelStyle: TextStyle(color: Colors.black),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  )),
-            ),
+            CustomFormField(text1: 'Query',),
+            SizedBox(height: 5.h,),
             Button(
               text: 'Submit',
               onPressed: () {},

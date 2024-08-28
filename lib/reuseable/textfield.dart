@@ -114,3 +114,38 @@ class Dob extends StatelessWidget {
     );
   }
 }
+
+class CustomFormField extends StatelessWidget {
+  String text1;
+  CustomFormField({required this.text1,super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    return  Padding(
+      padding: EdgeInsets.only(top: 2.h, bottom: 1.h),
+      child: Container(
+          height: 10.h,
+          width: screenWidth * 0.9,
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: const Color.fromRGBO(226, 226, 226, 1)),
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Padding(
+            padding:
+            EdgeInsets.symmetric(horizontal: 3.w, vertical: 0.3.h),
+            child: TextFormField(
+              keyboardType: TextInputType.text,
+              maxLines: null,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+              decoration:  InputDecoration(
+                labelText: text1,
+                labelStyle: TextStyle(color: Colors.black),
+                border: InputBorder.none,
+              ),
+            ),
+          )),
+    );
+  }
+}

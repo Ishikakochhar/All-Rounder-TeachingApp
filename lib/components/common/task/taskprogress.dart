@@ -14,11 +14,11 @@ class _TaskprogressState extends State<Taskprogress> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Task Progress'),
+        title: const Text('Task Progress'),
       ),
       body: Column(
         children: [
-          Datepicker(),
+          const Datepicker(),
           SizedBox(
             height: 3.h,
           ),
@@ -29,7 +29,7 @@ class _TaskprogressState extends State<Taskprogress> {
                 text1: 'Task',
                 text2: 'Completed',
                 widget: Text(
-                  '12',
+                  '0',
                   style: TextStyle(fontSize: 30.sp),
                 ),
               ),
@@ -38,18 +38,19 @@ class _TaskprogressState extends State<Taskprogress> {
                 text2: 'Duration',
                 widget: RichText(
                   text: TextSpan(
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                       children: [
-                        TextSpan(text: '1', style: TextStyle(fontSize: 30.sp)),
+                        TextSpan(text: '0', style: TextStyle(fontSize: 30.sp)),
                         TextSpan(text: 'h ', style: TextStyle(fontSize: 18.sp)),
-                        TextSpan(text: '46', style: TextStyle(fontSize: 30.sp)),
+                        TextSpan(text: '00', style: TextStyle(fontSize: 30.sp)),
                         TextSpan(text: 'm ', style: TextStyle(fontSize: 18.sp))
                       ]),
                 ),
                 ifTimeDuration: true,
               )
             ],
-          )
+          ),
+          SizedBox(child: Center(child: Text('No Task Found', style: TextStyle(fontSize: 15.sp),)), height: 40.h,)
         ],
       ),
     );
@@ -63,10 +64,10 @@ class TaskBox extends StatelessWidget {
   Widget widget;
   TaskBox(
       {this.ifTimeDuration = false,
-      required this.text1,
-      required this.text2,
-      required this.widget,
-      super.key});
+        required this.text1,
+        required this.text2,
+        required this.widget,
+        super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,10 +79,10 @@ class TaskBox extends StatelessWidget {
                 color: Colors.grey.shade200,
                 spreadRadius: 2,
                 blurRadius: 10,
-                offset: Offset(5, 6))
+                offset: const Offset(5, 6))
           ],
           borderRadius: BorderRadius.circular(17),
-          border: Border.all(color: Color.fromRGBO(237, 237, 237, 1))),
+          border: Border.all(color: const Color.fromRGBO(237, 237, 237, 1))),
       height: 16.h,
       width: 43.w,
       child: Padding(
@@ -103,11 +104,11 @@ class TaskBox extends StatelessWidget {
                 Text(
                   '$text1\n$text2',
                   style:
-                      TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w600),
+                  TextStyle(fontSize: 11.sp, fontWeight: FontWeight.w600),
                 ),
               ],
             ),
-            Align(alignment: Alignment.bottomLeft, child: widget)
+            Align(alignment: Alignment.bottomLeft, child: widget),
           ],
         ),
       ),

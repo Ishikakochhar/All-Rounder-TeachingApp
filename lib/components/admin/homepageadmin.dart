@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:teachingapp/components/admin/addactivity.dart';
 import 'package:teachingapp/components/common/profile/profile.dart';
 import 'package:teachingapp/components/common/task/taskprogress.dart';
 import 'package:teachingapp/reuseable/bottombar.dart';
-import 'tutor1.dart'; // Import your tutor1.dart file
 
-class Homepage extends StatelessWidget {
+import '../tutor1.dart';
+
+class Homepageadmin extends StatelessWidget {
   String profilename;
-  Homepage({this.profilename = 'John', super.key});
+  Homepageadmin({this.profilename = 'John', super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -224,27 +226,27 @@ class Homepage extends StatelessWidget {
                   switch (index) {
                     case 0:Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Tutor1(title: 'Physical Activity',)),
+                      MaterialPageRoute(builder: (context) => Addactivity(text: 'Physical Activity')),
                     );
                     break;
                     case 1:Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Tutor1(title: 'Mindfulness Activity',)),
+                      MaterialPageRoute(builder: (context) => Addactivity(text: 'Mindfulness Activity')),
                     );
                     break;
                     case 2:Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Tutor1(title: 'Cognitive Activity',)),
+                      MaterialPageRoute(builder: (context) => Addactivity(text: 'Cognitive Activity')),
                     );
                     break;
                     case 3:Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Tutor1(title: 'Emotional Activity',)),
+                      MaterialPageRoute(builder: (context) => Addactivity(text: 'Emotional Activity')),
                     );
                     break;
                     case 4:Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Tutor1(title: 'Social Activity',)),
+                      MaterialPageRoute(builder: (context) => Addactivity(text: 'Social Activity')),
                     );
                     break;
                   }

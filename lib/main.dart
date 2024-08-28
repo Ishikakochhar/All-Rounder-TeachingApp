@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
+import 'package:teachingapp/components/admin/addactivity.dart';
 import 'package:teachingapp/components/child/activitysubmit.dart';
 import 'package:teachingapp/components/child/childprofile.dart';
 import 'package:teachingapp/components/common/login/choice.dart';
@@ -14,6 +15,7 @@ import 'package:teachingapp/components/homepage.dart';
 import 'package:teachingapp/components/splash.dart';
 import 'package:teachingapp/components/tutor1.dart';
 import 'package:teachingapp/reuseable/alertbox.dart';
+import 'package:teachingapp/reuseable/bottomappbaradmin.dart';
 import 'package:teachingapp/reuseable/bottombar.dart';
 import 'package:teachingapp/reuseable/datepicker.dart';
 
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
             color: Colors.white,
             debugShowCheckedModeBanner: false,
-            home: Splash());
+            home: BottomNavBarAdmin());
       },
     );
   }

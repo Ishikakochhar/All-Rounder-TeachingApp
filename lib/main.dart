@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                         fontSize: 15.sp))),
-            title: 'Flutter Demo',
+            title: 'ReJunx',
             color: Colors.white,
             debugShowCheckedModeBanner: false,
             home: Splash());

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:teachingapp/components/common/task/taskprogress.dart'; // Import the Taskprogress component
 import 'package:teachingapp/reuseable/button.dart'; // Import reusable components
 import 'package:teachingapp/reuseable/datepicker.dart'; // Import reusable date picker
@@ -61,30 +62,36 @@ class _ActivityScreenState extends State<ActivityScreen> with SingleTickerProvid
         ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(60),
-          child: Container(
-            color: Colors.white,
-            child: TabBar(
-              controller: _tabController,
-              labelColor: Colors.white,
-              unselectedLabelColor: Colors.black,
-              indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.blue,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 3.w),
+            child: Container(
+              decoration: BoxDecoration(color: Color.fromRGBO(233, 253, 255, 1),borderRadius: BorderRadius.circular(15)),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 0.5.h),
+                child: TabBar(dividerColor: Colors.white,
+                  controller: _tabController,
+                  labelColor: Colors.white,
+                  unselectedLabelColor: Colors.black,
+                  indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromRGBO(42, 183, 199, 1),
+                  ),
+                  tabs: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 2.w),
+                      child: Tab(text: 'Add Activity'),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 3.w),
+                      child: Tab(text: 'Children'),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 3.w),
+                      child: Tab(text: 'Past Activity'),
+                    ),
+                  ],
+                ),
               ),
-              tabs: [
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: Tab(text: 'Add Activity'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Tab(text: 'Children'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Tab(text: 'Past Activity'),
-                ),
-              ],
             ),
           ),
         ),
@@ -245,6 +252,52 @@ class _ActivityScreenState extends State<ActivityScreen> with SingleTickerProvid
 
   Widget _buildPastActivityTab(){
 
-    return Taskprogress(); //
+    return SingleChildScrollView(child: TaskProgAssign()); //
   }
 }
+
+class TaskProgAssign extends StatelessWidget {
+  const TaskProgAssign({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Datepicker(),
+        SizedBox(
+          height: 3.h,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            TaskBox(
+              text1: 'Task',
+              text2: 'Completed',
+              widget: Text(
+                '0',
+                style: TextStyle(fontSize: 30.sp),
+              ),
+            ),
+            TaskBox(
+              text1: 'Time',
+              text2: 'Duration',
+              widget: RichText(
+                text: TextSpan(
+                    style: const TextStyle(color: Colors.black),
+                    children: [
+                      TextSpan(text: '0', style: TextStyle(fontSize: 30.sp)),
+                      TextSpan(text: 'h ', style: TextStyle(fontSize: 18.sp)),
+                      TextSpan(text: '00', style: TextStyle(fontSize: 30.sp)),
+                      TextSpan(text: 'm ', style: TextStyle(fontSize: 18.sp))
+                    ]),
+              ),
+              ifTimeDuration: true,
+            )
+          ],
+        ),
+        SizedBox(child: Center(child: Text('No Task Found', style: TextStyle(fontSize: 15.sp),)), height: 36.h,)
+      ],
+    );
+  }
+}
+

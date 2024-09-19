@@ -13,6 +13,7 @@ class _TaskprogressState extends State<Taskprogress> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Task Progress'),
       ),
@@ -50,7 +51,7 @@ class _TaskprogressState extends State<Taskprogress> {
               )
             ],
           ),
-          SizedBox(child: Center(child: Text('No Task Found', style: TextStyle(fontSize: 15.sp),)), height: 40.h,)
+          SizedBox(child: Center(child: Text('No Task Found', style: TextStyle(fontSize: 15.sp),)), height: 36.h,)
         ],
       ),
     );
